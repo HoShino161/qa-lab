@@ -1,0 +1,41 @@
+# 下单接口的用例数据
+
+invalid_qty:
+  - id: zero
+    qty: 0
+    desc: 数量为 0
+  - id: negative
+    qty: -1
+    desc: 数量为负一
+  - id: negative_large
+    qty: -100
+    desc: 数量为负一百
+
+# 金额精度：单价（分）× 数量 → 期望总额（分）
+amount_precision:
+  - id: five_yuan_one_x5
+    price_cents: 501
+    qty: 5
+    expected: 2505
+    desc: 5.01 元 × 5 件，浮点累加会算成 2504
+  - id: three_yuan_three_x3
+    price_cents: 333
+    qty: 3
+    expected: 999
+    desc: 3.33 元 × 3 件
+  - id: integer_price
+    price_cents: 10000
+    qty: 3
+    expected: 30000
+    desc: 整元价格，对照组
+
+# 非法商品
+invalid_product:
+  - id: not_exist
+    product_id: 999999
+    qty: 1
+    desc: 商品不存在
+  - id: zero_id
+    product_id: 0
+    qty: 1
+    desc: 商品 ID 为 0
