@@ -1,0 +1,11 @@
+*.db
+*.db-shm
+*.db-wal
+*.pyc
+.coverage
+.fault_*.db
+.pytest_cache/
+.venv/
+__pycache__/
+logs/
+reports/

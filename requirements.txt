@@ -1,0 +1,7 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pytest>=8.0
+requests>=2.31
+pyyaml>=6.0
+pytest-html>=4.1
+faker>=25.0
